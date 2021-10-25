@@ -1,0 +1,325 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  background: url(./img/bg1.png) center / cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  color: white;
+  overflow: hidden;
+}
+.navbar {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 80px;
+  display: inline-flex;
+  z-index: 1;
+  overflow: hidden;
+}
+.name {
+  font-size: 3em;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  left: 20px;
+  position: absolute;
+  top: 10px;
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: apparition 0.4s 0.8s ease-out forwards;
+}
+.selector {
+  position: absolute;
+  top: 13px;
+  right: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.8s;
+  overflow: hidden;
+  width: 0px;
+}
+.selector li {
+  width: 160px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+}
+.selector li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.6em;
+  user-select: none;
+}
+.icon {
+  position: absolute;
+  right: 20px;
+  top: 0px;
+  margin: 1em;
+  width: 40px;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateX(30px);
+  animation: apparition 0.8s 0.8s ease-out forwards;
+}
+.icon:after,
+.icon:before,
+.icon div {
+  background-color: #fff;
+  border-radius: 3px;
+  content: "";
+  display: block;
+  height: 5px;
+  margin: 7px 0;
+  transition: all 0.2s ease-in-out;
+}
+.icon.cross:before {
+  transform: translateY(12px) rotate(135deg);
+}
+.icon.cross:after {
+  transform: translateY(-12px) rotate(-135deg);
+}
+.icon.cross div {
+  transform: scale(0);
+}
+.selector.translation {
+  width: 640px;
+}
+.left {
+  left: 5%;
+  position: relative;
+}
+.left h1 {
+  font-size: 7em;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: apparition 0.8s 0.2s ease-out forwards;
+}
+.left p {
+  font-size: 3em;
+  display: block;
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: apparition 0.8s 0.4s ease-out forwards;
+  margin-right: 70px;
+}
+.left span {
+  position: relative;
+  display: inline-flex;
+  width: 300px;
+  height: 60px;
+  margin-top: 20px;
+  perspective: 1000px;
+  animation: bounce-in-right 1s 0.6s ease-in forwards;
+  transform: translateX(600px);
+  opacity: 0;
+}
+.left span a {
+  font-size: 19px;
+  letter-spacing: 1px;
+  transform-style: preserve-3d;
+  transform: translateZ(-25px);
+  transition: transform 0.25s;
+  font-family: "Montserrat", sans-serif;
+}
+.left span a:before,
+.left span a:after {
+  position: absolute;
+  content: "ACHETER MAINTENANT";
+  height: 60px;
+  width: 300px;
+  display: flex;
+  border: 3px solid white;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.left span a:before {
+  color: #fff;
+  background: transparent;
+  transform: rotateY(0deg) translateZ(30px);
+}
+.left span a:after {
+  color: black;
+  background: white;
+  transform: rotateX(90deg) translateZ(30px);
+}
+.left span a:hover {
+  transform: translateZ(-25px) rotateX(-90deg);
+}
+.right {
+  position: absolute;
+  right: 3%;
+}
+.right .social {
+  width: 60px;
+  height: 60px;
+  margin: 12px 0;
+  cursor: pointer;
+  transform: scale(1) translateX(30px);
+  opacity: 0;
+}
+.right .social-1 {
+  background: url(./img/facebook.png) center / cover;
+  animation: apparition 0.6s 0.2s ease-out forwards;
+}
+.right .social-2 {
+  background: url(./img/twitter.png) center / cover;
+  animation: apparition 0.6s 0.4s ease-out forwards;
+}
+.right .social-3 {
+  background: url(./img/Instagram.png) center / cover;
+  animation: apparition 0.6s 0.6s ease-out forwards;
+}
+.right .social-4 {
+  background: url(./img/youtube.png) center / cover;
+  animation: apparition 0.6s 0.8s ease-out forwards;
+}
+
+@keyframes apparition {
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes bounce-in-right {
+  0% {
+    transform: translateX(600px);
+    animation-timing-function: ease-in;
+  }
+  38% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  55% {
+    transform: translateX(68px);
+    animation-timing-function: ease-in;
+  }
+  72% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+  }
+  81% {
+    transform: translateX(32px);
+    animation-timing-function: ease-in;
+  }
+  90% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+  }
+  95% {
+    transform: translateX(8px);
+    animation-timing-function: ease-in;
+  }
+  100% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .name {
+    font-size: 2em;
+    top: 20px;
+  }
+  .selector li a {
+    font-size: 1.2em;
+  }
+  .selector li {
+    width: 120px;
+  }
+  .selector.translation {
+    width: 500px;
+  }
+  .left h1 {
+    font-size: 5em;
+  }
+  .left p {
+    font-size: 2em;
+  }
+}
+@media screen and (max-width: 768px) {
+  .name {
+    font-size: 2em;
+    top: 20px;
+  }
+  .selector li a {
+    font-size: 1.2em;
+  }
+  .selector li {
+    width: 120px;
+  }
+  .selector.translation {
+    width: 500px;
+  }
+  .left h1 {
+    font-size: 5em;
+  }
+  .left p {
+    font-size: 2em;
+  }
+
+  .left h1 {
+    font-size: 3em;
+  }
+  .left p {
+    font-size: 1.8em;
+  }
+  .right .social {
+    width: 40px;
+    height: 40px;
+  }
+  .left span,
+  .left span a:before,
+  .left span a:after {
+    width: 200px;
+    height: 40px;
+    font-size: 0.7em;
+  }
+  .left span a:before {
+    transform: rotateY(0deg) translateZ(20px);
+  }
+  .left span a:after {
+    transform: rotateX(90deg) translateZ(20px);
+  }
+  .navbar {
+    overflow: visible;
+  }
+  .selector {
+    top: 70px;
+    right: 0px;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    width: 100%;
+    height: 0px;
+  }
+  .selector li {
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+  }
+  .selector li a {
+    font-size: 1.2em;
+  }
+  .selector.translation {
+    height: 120px;
+    width: 100%;
+  }
+}
